@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="3d.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tencer Portfolio</title>
+    <style>
+        :root {
+            --background-color: rgb(0, 0, 36);
+            --nav-background: rgb(4, 4, 22);
+            --text-color: white;
+            --highlight-color: rgb(44, 44, 255);
+            --border-color: rgba(255, 255, 255, 0.3);
+            --progress-border: 6px solid white;
+            --progress-size: 80px;
+            --transition-duration: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 84px;
+            background-color: var(--nav-background);
+            padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .left {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .right {
+            margin-left: auto;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 10px 15px;
+            transition: color var(--transition-duration), font-size var(--transition-duration);
+        }
+
+        nav ul li a:hover {
+            color: var(--highlight-color);
+            font-size: 1.3rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1.text {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: aqua;
+        }
+
+        p.para {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        ul.skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        ul.skills li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+            background-color: var(--nav-background);
+            border: 1px solid var(--text-color);
+            border-radius: 10px;
+            width: 150px;
+            transition: background-color var(--transition-duration), transform var(--transition-duration);
+        }
+
+        ul.skills li:hover {
+            background-color: var(--highlight-color);
+            transform: translateY(-5px);
+        }
+
+        .skill-name {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .circular-progress {
+            position: relative;
+            width: var(--progress-size);
+            height: var(--progress-size);
+            background-color: var(--background-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .circular-progress::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: var(--border-color);
+        }
+
+        .circular-progress span {
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .circular-progress[data-progress="50"]::after,
+        .circular-progress[data-progress="25"]::after,
+        .circular-progress[data-progress="20"]::after,
+        .circular-progress[data-progress="40"]::after,
+        .circular-progress[data-progress="75"]::after,
+        .circular-progress[data-progress="80"]::after,
+        .circular-progress[data-progress="90"]::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: var(--progress-border);
+        }
+
+        .circular-progress[data-progress="50"]::after {
+            clip: rect(0px, 40px, var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="50"] span::after {
+            clip: rect(0px, var(--progress-size), var(--progress-size), 40px);
+        }
+
+        .circular-progress[data-progress="25"]::after {
+            clip: rect(0px, 40px, var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="25"] span::after {
+            clip: rect(40px, var(--progress-size), var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="20"]::after {
+            clip: rect(0px, 40px, var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="20"] span::after {
+            clip: rect(48px, var(--progress-size), var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="40"]::after {
+            clip: rect(0px, 40px, var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="40"] span::after {
+            clip: rect(32px, var(--progress-size), var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="75"]::after {
+            clip: rect(0px, 40px, var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="75"] span::after {
+            clip: rect(0px, var(--progress-size), var(--progress-size), 40px);
+        }
+
+        .circular-progress[data-progress="80"]::after {
+            clip: rect(0px, 40px, var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="80"] span::after {
+            clip: rect(0px, var(--progress-size), var(--progress-size), 32px);
+        }
+
+        .circular-progress[data-progress="90"]::after {
+            clip: rect(0px, 40px, var(--progress-size), 0px);
+        }
+
+        .circular-progress[data-progress="90"] span::after {
+            clip: rect(0px, var(--progress-size), var(--progress-size), 16px);
+        }
+
+        .right img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .right {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            h1.text {
+                font-size: 2.5rem;
+            }
+
+            p.para {
+                font-size: 1rem;
+            }
+
+            ul.skills li {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">TENCER PORTFOLIO</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="socials.html">Socials</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="text">Welcome to the <span style="color: aqua;">skills</span> section</h1>
+        <p class="para">Explore my diverse technology skills, where innovation meets expertise. <br> Welcome to a journey of tech excellence and creativity.</p>
+        <ul class="skills">
+            <li>
+                <div class="circular-progress" data-progress="50"><span>50%</span></div>
+                <div class="skill-name">Python</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="25"><span>25%</span></div>
+                <div class="skill-name">Pandas</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="25"><span>25%</span></div>
+                <div class="skill-name">Numpy</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="20"><span>20%</span></div>
+                <div class="skill-name">SQL</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="40"><span>40%</span></div>
+                <div class="skill-name">HTML</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="40"><span>40%</span></div>
+                <div class="skill-name">CSS</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="75"><span>75%</span></div>
+                <div class="skill-name">Networking</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="80"><span>80%</span></div>
+                <div class="skill-name">Web Designing</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="90"><span>90%</span></div>
+                <div class="skill-name">Graphic Designing</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="75"><span>75%</span></div>
+                <div class="skill-name">Problem Solving</div>
+            </li>
+            <li>
+                <div class="circular-progress" data-progress="75"><span>75%</span></div>
+                <div class="skill-name">Team Management</div>
+            </li>
+        </ul>
+        <div class="right">
+            <img src="De.png" alt="Image describing skills">
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="3d.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 36);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 84px;
+            background-color: rgb(4, 4, 22);
+            padding: 0 20px;
+        }
+
+        .left {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: rgb(44, 44, 255);
+            font-size: 1.3rem;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: aqua;
+            text-align: center; /* Centering heading on all screen sizes */
+        }
+
+        .project {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgb(30, 30, 50);
+            border-radius: 5px;
+        }
+
+        .project h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: aqua;
+        }
+
+        .project p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .github-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .github-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: aqua;
+            color: rgb(4, 4, 22);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .github-button a:hover {
+            background-color: rgb(44, 44, 255);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .project h2 {
+                font-size: 1.5rem;
+            }
+
+            .project p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">TENCER PORTFOLIO</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="socials.html">Socials</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>My Projects</h1>
+
+        <div class="project">
+            <h2>2048 Game using Python</h2>
+            <p>A simple implementation of the popular 2048 game using Python. Includes graphical interface and logic.</p>
+        </div>
+
+        <div class="project">
+            <h2>Online Shoe Store Web Page using HTML CSS</h2>
+            <p>Designed and developed a responsive web page for an online shoe store using HTML and CSS.</p>
+        </div>
+
+        <div class="project">
+            <h2>Screen Recorder using Python</h2>
+            <p>Developed a screen recording application using Python to capture desktop activities.</p>
+        </div>
+
+        <div class="project">
+            <h2>Internet Speed Test</h2>
+            <p>Created a tool to measure internet speed using Python, displaying download and upload speeds.</p>
+        </div>
+
+        <div class="project">
+            <h2>Typing Speed Test</h2>
+            <p>Developed a typing speed test application in Python to measure typing accuracy and speed.</p>
+        </div>
+
+        <div class="github-button">
+            <a href="https://github.com/TencerDe" target="_blank">View More on GitHub</a>
+        </div>
+    </main>
+</body>
+
+</html>

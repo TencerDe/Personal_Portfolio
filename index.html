@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tencer Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="3d.png">
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(0, 0, 36);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+            margin: 0;
+        }
+
+        /* Navbar Styles */
+        header {
+            background-color: rgb(4, 4, 22);
+            padding: 10px 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links ul li a:hover {
+            color: rgb(44, 44, 255);
+            font-size: 1.3rem;
+        }
+
+        /* Main Section Styles */
+        main {
+            padding: 20px;
+        }
+
+        .first-section {
+            display: flex;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .left-section {
+            width: 50%;
+            font-size: 2rem;
+            text-align: left;
+        }
+
+        .left-section .name {
+            font-size: 3.5rem;
+            color: aqua;
+        }
+
+        .right-section img {
+            width: 100%;
+            max-width: 400px; /* Adjust max-width as needed */
+            border-radius: 10px;
+        }
+
+        #element {
+            color: rgb(170, 107, 228);
+            font-size: 2rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .nav-links ul li {
+                margin: 10px 0;
+            }
+
+            .left-section,
+            .right-section {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">TENCER PORTFOLIO</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="socials.html">Socials</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="first-section">
+            <div class="left-section">
+                <div>I am <span class="name">Tanuj Sharma</span></div>
+                <div>An engineering student</div>
+                <div>And</div>
+                <span id="element"></span>
+            </div>
+            <div class="right-section">
+                <img src="new.png" alt="Image">
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Python Developer', 'Graphic Artist', 'Web Designer', 'Video Editor', 'Creator'],
+            typeSpeed: 70,
+        });
+    </script>
+</body>
+
+</html>
